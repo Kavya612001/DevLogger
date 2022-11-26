@@ -1,0 +1,10 @@
+<div class="card card-body mb-3">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" name = "text" [(ngModel)]="text" class="form-control" placeholder="Add a log..">
+            <input type="submit" value="Add Log" class="btn btn-light" [attr.disabled] = "this.text? null: 'true'">
+            <!-- We use button type so that it doesnt submit the form -->
+            <button (click)="clearState()"type="button" class="btn btn-warning" [style.visibility] = "this.text ? 'visible':'hidden'">Clear</button>
+        </div>
+    </form>
+</div>
